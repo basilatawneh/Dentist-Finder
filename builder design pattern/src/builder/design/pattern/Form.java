@@ -4,17 +4,14 @@
  * and open the template in the editor.
  */
 package builder.design.pattern;
+import java.util.ArrayList;
 
-/**
- *
- * @author Abed AL-Fattah Hroub
- */
 public class Form  implements Form_Plan {
     Personal_Information Person;
-    Address_Section Address;
+    ArrayList<Address_Section> Address = new ArrayList<Address_Section>();
     Biography_Section Bio;
-    Educatio_Section Education;
-    Areas_of_specialization_Section Area;
+    ArrayList< Educatio_Section> Education= new ArrayList<Educatio_Section>();
+    ArrayList< Areas_of_specialization_Section> Area=new ArrayList<Areas_of_specialization_Section>();
 
 
     @Override
@@ -28,16 +25,16 @@ public class Form  implements Form_Plan {
     }
     public void SetEducation(String deg,String maj,String sch,int year) 
     {
-        Education = new Educatio_Section(deg, maj, sch, year);
+        Education.add( new Educatio_Section(deg, maj, sch, year));
         
     }
     public void SetAddress(String country, String state,String city,String street, String pos)
     {
-        Address = new Address_Section(country, state, city, street, pos);
+        Address.add(new Address_Section(country, state, city, street, pos));
     }
     public void SetAreaOfSpecialization(String area,int year)
     {
-        Area = new Areas_of_specialization_Section(area, year);
+        Area.add( new Areas_of_specialization_Section(area, year));
                 
     }
     
